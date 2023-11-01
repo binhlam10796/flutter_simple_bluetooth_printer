@@ -55,10 +55,10 @@ class BLEManager(context: Context) : IBluetoothManager() {
         var resultSent = false
 
         scanDisposable = rxBleClient.scanBleDevices(
-            ScanSettings.Builder()
-                .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY) // change if needed
-                .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES) // change if needed
-                .build() // add filters if needed
+            ScanSettings.Builder().build()
+//                .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY) // change if needed
+//                .setCallbackType(ScanSettings.CALLBACK_TYPE_ALL_MATCHES) // change if needed
+                // add filters if needed
         ).subscribe(
             { scanResult ->
                 if (!resultSent) {
